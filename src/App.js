@@ -1,27 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import { withAppInstall } from './AppInstall';
 import Webcam from './Webcam';
+import Recorder from './Recorder';
 
 const App = props => {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit<code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      <Webcam />
+      <h1>Camera</h1>
+      {/* <Webcam /> */}
+      {<Recorder />}
     </div>
   );
 }

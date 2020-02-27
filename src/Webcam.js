@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './Webcam.scss';
 
 const Webcam = props => {
   const [mediaStream, setMediaStream] = useState(null);
@@ -7,11 +8,6 @@ const Webcam = props => {
   // componentDidMount
   useEffect(() => {
     enableStream();
-
-    // componentWillUnmount
-    return (() => {
-
-    })
   }, []);
 
   // componentDidUpdate
@@ -25,7 +21,9 @@ const Webcam = props => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: false,
-        video: { facingMode: 'environment' }
+        video: {
+          facingMode: 'user'
+        }
       });
       setMediaStream(stream);
     }
