@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
+import './Recorder.scss';
 
 const Recorder = props => {
   const [mediaRecorder, setMediaRecorder] = useState(null);
-  const videoRef = useRef();
+  const [isRecording, setIsRecording] = useState(false);
+  const recorderRef = useRef();
+  const playerRef = useRef();
 
   useEffect(() => {
     enableRecorder();
 
     // playback recorded media
-    videoRef.current.onloadedmetadata = (e) => {
-      videoRef.current.play();
+    playerRef.current.onloadedmetadata = (e) => {
+      playerRef.current.play();
     }
   }, [])
 
@@ -26,19 +29,21 @@ const Recorder = props => {
       let blob = new Blob(chunks, { type: 'video/mp4' });
       chunks = [];
       let videoURL = window.URL.createObjectURL(blob);
-      videoRef.current.src = videoURL;
+      playerRef.current.src = videoURL;
     }
   }, [mediaRecorder]);
 
   const start = () => {
     if (mediaRecorder.state === 'recording') return;
     mediaRecorder.start();
+    setIsRecording(true);
     console.log(mediaRecorder.state);
   }
 
   const stop = () => {
     if (mediaRecorder.state === 'inactive') return;
     mediaRecorder.stop();
+    setIsRecording(false);
     console.log(mediaRecorder.state);
   }
 
@@ -50,6 +55,13 @@ const Recorder = props => {
           facingMode: 'user'
         }
       });
+
+      recorderRef.current.onloadedmetadata = (e) => {
+        playerRef.current.play();
+      }
+
+      recorderRef.current.srcObject = stream;
+
       setMediaRecorder(new MediaRecorder(stream));
     }
     catch (err) {
@@ -60,13 +72,25 @@ const Recorder = props => {
   return (
     <React.Fragment>
       <div>
-        <button onClick={start}>Start</button>
-        <button onClick={stop}>Stop</button>
+        {!isRecording && <button onClick={start}>Start Recording</button>}
+        {isRecording && <button onClick={stop} className={'recording'}>Stop Recodring</button>}
       </div>
       <div>
+        <h3>Recorder</h3>
         <video
+          className="recorder"
+          ref={recorderRef}
+          autoPlay
+          playsInline
+          muted
+        />
+      </div>
+      <div>
+        <h3>Playback</h3>
+        <video
+          className="player"
           controls
-          ref={videoRef}
+          ref={playerRef}
           autoPlay
           playsInline
         />
