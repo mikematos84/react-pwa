@@ -2,23 +2,16 @@ import React, { useState, useEffect, useRef } from "react";
 import './Recorder.scss';
 
 const Recorder = props => {
-  const [mediaRecorder, setMediaRecorder] = useState(null);
+  const [mediaRecorder, setMediaRecorder] = useState({});
   const [isRecording, setIsRecording] = useState(false);
   const recorderRef = useRef();
   const playerRef = useRef();
 
   useEffect(() => {
     enableRecorder();
-
-    // playback recorded media
-    playerRef.current.onloadedmetadata = (e) => {
-      playerRef.current.play();
-    }
   }, [])
 
   useEffect(() => {
-    if (!mediaRecorder) return;
-
     let chunks = [];
 
     mediaRecorder.ondataavailable = (e) => {
@@ -28,23 +21,29 @@ const Recorder = props => {
     mediaRecorder.onstop = (e) => {
       let blob = new Blob(chunks, { type: 'video/mp4' });
       chunks = [];
-      let videoURL = window.URL.createObjectURL(blob);
-      playerRef.current.src = videoURL;
+      let url = (window.URL || window.webkitURL).createObjectURL(blob);
+      console.log(url);
+      playerRef.current.src = url;
     }
+
+    console.log('MediaRecorder Ready');
   }, [mediaRecorder]);
 
+  useEffect(() => {
+    if (mediaRecorder.state !== undefined)
+      console.log(mediaRecorder.state)
+  }, [mediaRecorder, isRecording])
+
   const start = () => {
-    if (mediaRecorder.state === 'recording') return;
-    mediaRecorder.start();
+    if (isRecording) return;
+    mediaRecorder.start(1000);
     setIsRecording(true);
-    console.log(mediaRecorder.state);
   }
 
   const stop = () => {
-    if (mediaRecorder.state === 'inactive') return;
+    if (!isRecording) return;
     mediaRecorder.stop();
     setIsRecording(false);
-    console.log(mediaRecorder.state);
   }
 
   const enableRecorder = async () => {
@@ -56,13 +55,9 @@ const Recorder = props => {
         }
       });
 
-      recorderRef.current.onloadedmetadata = (e) => {
-        playerRef.current.play();
-      }
-
-      recorderRef.current.srcObject = stream;
-
       setMediaRecorder(new MediaRecorder(stream));
+      recorderRef.current.srcObject = stream;
+      console.log("MediaRecorder Enabled")
     }
     catch (err) {
       console.log(err);

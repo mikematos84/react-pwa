@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { withAppInstall } from './AppInstall';
-import Webcam from './Webcam';
+// import Webcam from './Webcam';
 import Recorder from './Recorder';
 
 const App = props => {
