@@ -3,7 +3,14 @@
   width: 90%;
 }
 
-.recording {
-  background-color: red;
-  color: white;
+button {
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+
+  &.recording {
+    background-color: red;
+    color: white;
+  }
 }
