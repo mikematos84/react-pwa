@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import './Recorder.scss';
 
 const Recorder = props => {
@@ -27,6 +28,7 @@ const Recorder = props => {
       chunks = [];
       let url = (window.URL || window.webkitURL).createObjectURL(blob);
       setPlaybackPreview(url);
+      createDownloadLink(url);
     }
 
     mediaRecorder.onerror = e => {
@@ -36,6 +38,12 @@ const Recorder = props => {
 
     console.log('MediaRecorder ready');
   }, [mediaRecorder]);
+
+  const createDownloadLink = url => {
+    const link = <a href={url} download="Recording.mp4">Download</a>;
+    const linkContainer = document.getElementById('download-link');
+    ReactDOM.render(link, linkContainer);
+  }
 
   /**
    * Helper function to console out change in state of the MediaRecorder
@@ -144,6 +152,7 @@ const Recorder = props => {
 
   return (
     <React.Fragment>
+      <h1>MediaRecorder</h1>
       <div>
         <button
           onClick={isRecording ? stop : start}
@@ -170,6 +179,7 @@ const Recorder = props => {
           playsInline
         />
       </div>
+      <div id="download-link"></div>
     </React.Fragment>
   )
 }
