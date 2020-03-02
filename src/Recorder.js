@@ -21,11 +21,17 @@ const Recorder = props => {
     let chunks = [];
 
     mediaRecorder.ondataavailable = e => chunks.push(e.data)
-    mediaRecorder.onstop = (e) => {
+
+    mediaRecorder.onstop = e => {
       let blob = new Blob(chunks, { type: 'video/mp4' });
       chunks = [];
       let url = (window.URL || window.webkitURL).createObjectURL(blob);
       setPlaybackPreview(url);
+    }
+
+    mediaRecorder.onerror = e => {
+      console.log('Error recording stream');
+      console.log(e.error);
     }
 
     console.log('MediaRecorder ready');
