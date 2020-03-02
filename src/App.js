@@ -23,7 +23,8 @@ const App = props => {
   return (
     <div className="App">
       <div>{userAgent}</div>
-      {isIos() && !isInStandaloneMode() || isAndroid() ? <CameraInput /> : <Recorder />}
+      {/* {isIos() && !isInStandaloneMode() || isAndroid() ? <CameraInput /> : <Recorder />} */}
+      {isIos() || isAndroid() ? <CameraInput /> : <Recorder />}
     </div>
   );
 }
