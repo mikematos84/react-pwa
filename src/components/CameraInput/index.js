@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import './Recorder.scss';
 
 const CameraInput = props => {
   const playerRef = useRef();

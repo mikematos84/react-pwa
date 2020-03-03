@@ -1,31 +1,41 @@
 import React from 'react';
 import './App.scss';
 import { withAppInstall } from './AppInstall';
-import Recorder from './Recorder';
-import CameraInput from './CameraInput';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link
+} from 'react-router-dom';
+
+// Pages
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import MediaRecorder from './pages/MediaRecorder';
+import DefaultCameraInput from './pages/DefaultCameraInput';
+import Sandbox from './pages/Sandbox';
+import { debug } from './services/browser';
 
 const App = props => {
-  const userAgent = window.navigator.userAgent.toLowerCase();
-
-  // Detects if device is on iOS 
-  const isIos = () => {
-    return /iphone|ipad|ipod/.test(userAgent);
-  }
-
-  // Detects if device is on Android
-  const isAndroid = () => {
-    return /android/.test(userAgent);
-  }
-
-  // Detects if device is in standalone mode
-  const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-
   return (
-    <div className="App">
-      <div>{userAgent}</div>
-      {/* {isIos() && !isInStandaloneMode() || isAndroid() ? <CameraInput /> : <Recorder />} */}
-      {isIos() || isAndroid() ? <CameraInput /> : <Recorder />}
-    </div>
+    <Router basename="/react-pwa">
+      <div className="App">
+        <ul className="navigation">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/default-camera-input">Default Camera Input</Link></li>
+          <li><Link to="/media-recorder-capture">MediaRecorder Capture</Link></li>
+          <li><Link to="/sandbox">Sandbox</Link></li>
+        </ul>
+        {debug()}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/default-camera-input" component={DefaultCameraInput} />
+          <Route path="/media-recorder-capture" component={MediaRecorder} />
+          <Route path="/sandbox" component={Sandbox} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

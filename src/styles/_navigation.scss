@@ -1,0 +1,22 @@
+.navigation {  
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+  
+  li {
+    list-style: none;
+    display: inline-flex;
+    align-content: space-around;
+
+    a {
+      color: black;
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+
+      &:hover {
+        background-color: darkgray;
+      }
+    }
+  }
+}

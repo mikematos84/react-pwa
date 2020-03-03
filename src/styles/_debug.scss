@@ -1,0 +1,20 @@
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  
+  th, td {
+    border: 1px solid black;
+    padding: 5px 10px;
+  }
+
+  tr {
+    td { 
+      &:nth-child(1){
+        text-align: right;
+      }
+      &:nth-child(2){
+        text-align: left;
+      }
+    }
+  }
+}

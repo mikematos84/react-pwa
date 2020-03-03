@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import './Recorder.scss';
 
-const Recorder = props => {
+const MediaRecorderCapture = props => {
   const [mediaRecorder, setMediaRecorder] = useState({});
   const [isRecording, setIsRecording] = useState(false);
   const recorderRef = useRef();
@@ -160,7 +159,7 @@ const Recorder = props => {
         >{isRecording ? 'Stop' : 'Start'} Recording </button>
       </div>
       <div>
-        <h3>Recorder</h3>
+        <h3>MediaRecorderCapture</h3>
         <video
           className="recorder"
           ref={recorderRef}
@@ -184,4 +183,4 @@ const Recorder = props => {
   )
 }
 
-export default Recorder;
+export default MediaRecorderCapture;
