@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../App.scss';
+// import '../../App.scss';
 import CameraInput from '../../components/CameraInput';
 import { currentPage } from '../../services/routerHelper';
 

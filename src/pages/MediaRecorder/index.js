@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../App.scss';
+// import '../../App.scss';
 import MediaRecorderCapture from '../../components/MediaRecorderCapture';
 import { currentPage } from '../../services/routerHelper';
 

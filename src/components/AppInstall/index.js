@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './AppInstall.scss';
 
 const AppInstall = props => {
 

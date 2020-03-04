@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/_sandbox.scss';
+// import '../../styles/_sandbox.scss';
 
 import { useMediaDevices } from 'react-use';
 import { currentPage } from '../../services/routerHelper';

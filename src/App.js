@@ -1,6 +1,5 @@
 import React from 'react';
-import './App.scss';
-import { withAppInstall } from './AppInstall';
+import { withAppInstall } from './components/AppInstall';
 import {
   BrowserRouter as Router,
   Route,

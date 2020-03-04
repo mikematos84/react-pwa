@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import '../../App.scss';
+// import '../../App.scss';
 
 // Services
 import { hasMediaRecorder } from '../../services/hasMediaRecorder';

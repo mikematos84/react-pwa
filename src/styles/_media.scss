@@ -2,15 +2,3 @@
   max-width: 400px;
   width: 90%;
 }
-
-button {
-  background-color: lightgrey;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 14px;
-
-  &.recording {
-    background-color: red;
-    color: white;
-  }
-}

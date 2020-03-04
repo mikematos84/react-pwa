@@ -43,5 +43,8 @@
     "http-serve": "^1.0.1",
     "https-serve": "^1.0.0",
     "node-sass": "^4.13.1"
+  },
+  "resolutions": {
+    "node-sass": "npm:sass"
   }
 }
