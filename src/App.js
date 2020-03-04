@@ -5,8 +5,13 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link
 } from 'react-router-dom';
+
+// Components
+import Navigation from './components/Navigation';
+
+// Services
+import { debug } from './services/browser';
 
 // Pages
 import Home from './pages/Home';
@@ -14,18 +19,12 @@ import NotFound from './pages/NotFound';
 import MediaRecorder from './pages/MediaRecorder';
 import DefaultCameraInput from './pages/DefaultCameraInput';
 import Sandbox from './pages/Sandbox';
-import { debug } from './services/browser';
 
 const App = props => {
   return (
     <Router basename="/react-pwa">
       <div className="App">
-        <ul className="navigation">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/default-camera-input">Default Camera Input</Link></li>
-          <li><Link to="/media-recorder-capture">MediaRecorder Capture</Link></li>
-          <li><Link to="/sandbox">Sandbox</Link></li>
-        </ul>
+        <Navigation />
         {debug()}
         <Switch>
           <Route path="/" exact component={Home} />
