@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "https://mikematos84.github.io/react-pwa/static/css/main.893c6bda.chunk.css",
-    "main.js": "https://mikematos84.github.io/react-pwa/static/js/main.7ef48cf9.chunk.js",
-    "main.js.map": "https://mikematos84.github.io/react-pwa/static/js/main.7ef48cf9.chunk.js.map",
-    "runtime-main.js": "https://mikematos84.github.io/react-pwa/static/js/runtime-main.644230bb.js",
-    "runtime-main.js.map": "https://mikematos84.github.io/react-pwa/static/js/runtime-main.644230bb.js.map",
-    "static/js/2.a3ec7a19.chunk.js": "https://mikematos84.github.io/react-pwa/static/js/2.a3ec7a19.chunk.js",
-    "static/js/2.a3ec7a19.chunk.js.map": "https://mikematos84.github.io/react-pwa/static/js/2.a3ec7a19.chunk.js.map",
-    "index.html": "https://mikematos84.github.io/react-pwa/index.html",
-    "precache-manifest.180cf8d01bdb80e198d8a26ebf40fc3b.js": "https://mikematos84.github.io/react-pwa/precache-manifest.180cf8d01bdb80e198d8a26ebf40fc3b.js",
-    "service-worker.js": "https://mikematos84.github.io/react-pwa/service-worker.js",
-    "static/css/main.893c6bda.chunk.css.map": "https://mikematos84.github.io/react-pwa/static/css/main.893c6bda.chunk.css.map",
-    "static/js/2.a3ec7a19.chunk.js.LICENSE.txt": "https://mikematos84.github.io/react-pwa/static/js/2.a3ec7a19.chunk.js.LICENSE.txt"
+    "main.css": "/react-pwa/static/css/main.893c6bda.chunk.css",
+    "main.js": "/react-pwa/static/js/main.f95db613.chunk.js",
+    "main.js.map": "/react-pwa/static/js/main.f95db613.chunk.js.map",
+    "runtime-main.js": "/react-pwa/static/js/runtime-main.5d797ca6.js",
+    "runtime-main.js.map": "/react-pwa/static/js/runtime-main.5d797ca6.js.map",
+    "static/js/2.a3ec7a19.chunk.js": "/react-pwa/static/js/2.a3ec7a19.chunk.js",
+    "static/js/2.a3ec7a19.chunk.js.map": "/react-pwa/static/js/2.a3ec7a19.chunk.js.map",
+    "index.html": "/react-pwa/index.html",
+    "precache-manifest.bb716dbfd61ce73a380d86ca806800ab.js": "/react-pwa/precache-manifest.bb716dbfd61ce73a380d86ca806800ab.js",
+    "service-worker.js": "/react-pwa/service-worker.js",
+    "static/css/main.893c6bda.chunk.css.map": "/react-pwa/static/css/main.893c6bda.chunk.css.map",
+    "static/js/2.a3ec7a19.chunk.js.LICENSE.txt": "/react-pwa/static/js/2.a3ec7a19.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.644230bb.js",
+    "static/js/runtime-main.5d797ca6.js",
     "static/js/2.a3ec7a19.chunk.js",
     "static/css/main.893c6bda.chunk.css",
-    "static/js/main.7ef48cf9.chunk.js"
+    "static/js/main.f95db613.chunk.js"
   ]
 }
