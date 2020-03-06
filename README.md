@@ -15,14 +15,28 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm run deploy`
+### `npm run start-sw`
+Uses [http-serve](https://www.npmjs.com/package/http-serve) to serve application and enable service worker functionality 
 
-Deploys contents of /build folder to gh-pages (Git Hub Pages) branch for hosting
 
 ### `npm run predeploy`
-
 Creates or Updates the /build folder
 
-### `npm run start-sw`
+### `npm run deploy`
+Deploys contents of /build folder to gh-pages (Git Hub Pages) branch for hosting
 
-Uses [http-serve](https://www.npmjs.com/package/http-serve) to serve application and enable service worker functionality 
+
+> IMPORTANT!: Ensure the following two files are in the root directory. If either of them happen to be missing, please create them with the following contents
+
+```yaml
+# filename: .env.production
+
+# /react-pwa = location of github repo containing gh-pages branch
+PUBLIC_URL=/react-pwa
+```
+
+```yaml
+# filename .env.production.local
+PUBLIC_URL=
+```
+

@@ -2,7 +2,6 @@
   "name": "react-pwa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mikematos84.github.io/react-pwa/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -20,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start-sw": "http-serve ./build",
-    "predeploy": "npm run build",
+    "predeploy": "env-cmd -f .env.production npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -39,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "gh-pages": "^2.2.0",
     "http-serve": "^1.0.1",
     "https-serve": "^1.0.0",
