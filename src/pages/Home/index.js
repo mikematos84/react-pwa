@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 // Services
 import { hasMediaRecorder } from '../../services/hasMediaRecorder';
 
+// Context
 import withContextConsumer from '../../contexts/navigation/withContextConsumer';
 
 const Home = props => {

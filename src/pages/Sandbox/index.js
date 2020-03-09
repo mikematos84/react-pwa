@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { useMediaDevices } from 'react-use';
 
+// Context
 import withContextConsumer from '../../contexts/navigation/withContextConsumer';
 
 const Sandbox = props => {

@@ -19,7 +19,11 @@ import MediaRecorder from './pages/MediaRecorder';
 import DefaultCameraInput from './pages/DefaultCameraInput';
 import Sandbox from './pages/Sandbox';
 import withContextProvider from './contexts/navigation/withContextProvider';
+
+// Services
 import { currentPage } from './services/routerHelper';
+
+// Context
 import { NavigationContext } from './contexts/navigation/Context';
 
 const App = props => {
