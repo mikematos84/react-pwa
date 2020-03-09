@@ -1,13 +1,11 @@
 import React from 'react';
-// import '../../App.scss';
-import { currentPage } from '../../services/routerHelper';
+
+import withContextConsumer from '../../contexts/navigation/withContextConsumer';
 
 const NotFound = props => {
   return (
-    <div className={currentPage(props.location)}>
-      <div>Not Found</div>
-    </div>
+    <div>Not Found</div>
   )
 }
 
-export default NotFound;
+export default withContextConsumer(NotFound);

@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useContext } from 'react';
 import { withAppInstall } from './components/AppInstall';
 import {
   BrowserRouter as Router,
@@ -18,12 +18,17 @@ import NotFound from './pages/NotFound';
 import MediaRecorder from './pages/MediaRecorder';
 import DefaultCameraInput from './pages/DefaultCameraInput';
 import Sandbox from './pages/Sandbox';
+import withContextProvider from './contexts/navigation/withContextProvider';
+import { currentPage } from './services/routerHelper';
+import { NavigationContext } from './contexts/navigation/Context';
 
 const App = props => {
+  const { navigation } = useContext(NavigationContext);
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Suspense fallback={<div>Loading...</div>}>
-        <div className="App">
+        <div className={`App ${currentPage(navigation.location)}`}>
           <Navigation />
           {debug()}
           <Switch>
@@ -39,4 +44,4 @@ const App = props => {
   );
 }
 
-export default withAppInstall(App);
+export default withContextProvider(withAppInstall(App));

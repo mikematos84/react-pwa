@@ -1,14 +1,18 @@
-import React from 'react';
-// import '../../App.scss';
+import React, { useEffect } from 'react';
+
 import MediaRecorderCapture from '../../components/MediaRecorderCapture';
-import { currentPage } from '../../services/routerHelper';
+
+import withContextConsumer from '../../contexts/navigation/withContextConsumer';
 
 const MediaRecorder = props => {
+
+  useEffect(() => {
+    console.log(props);
+  }, [])
+
   return (
-    <div className={currentPage(props.location)}>
-      <MediaRecorderCapture />
-    </div>
+    <MediaRecorderCapture />
   )
 }
 
-export default MediaRecorder;
+export default withContextConsumer(MediaRecorder);
