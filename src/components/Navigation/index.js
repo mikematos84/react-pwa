@@ -8,6 +8,7 @@ const Navigation = props => {
       <li><NavLink to="/default-camera-input">Default Camera Input</NavLink></li>
       <li><NavLink to="/media-recorder-capture">MediaRecorder Capture</NavLink></li>
       <li><NavLink to="/sandbox">Sandbox</NavLink></li>
+      <li><NavLink to="/vad-time-slicing">VAD Time Slicing</NavLink></li>
     </ul>
   )
 }

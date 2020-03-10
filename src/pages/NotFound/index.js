@@ -5,7 +5,9 @@ import withContextConsumer from '../../contexts/navigation/withContextConsumer';
 
 const NotFound = props => {
   return (
-    <div>Not Found</div>
+    <div className="wrapper content">
+      <div>Not Found</div>
+    </div>
   )
 }
 

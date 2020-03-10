@@ -11,6 +11,11 @@ import Navigation from './components/Navigation';
 
 // Services
 import { debug } from './services/browser';
+import { currentPage } from './services/routerHelper';
+
+// Context
+import { NavigationContext } from './contexts/navigation/Context';
+import withContextProvider from './contexts/navigation/withContextProvider';
 
 // Pages
 import Home from './pages/Home';
@@ -18,13 +23,7 @@ import NotFound from './pages/NotFound';
 import MediaRecorder from './pages/MediaRecorder';
 import DefaultCameraInput from './pages/DefaultCameraInput';
 import Sandbox from './pages/Sandbox';
-import withContextProvider from './contexts/navigation/withContextProvider';
-
-// Services
-import { currentPage } from './services/routerHelper';
-
-// Context
-import { NavigationContext } from './contexts/navigation/Context';
+import VadTimeSlicing from './pages/VadTimeSlicing';
 
 const App = props => {
   const { navigation } = useContext(NavigationContext);
@@ -40,6 +39,7 @@ const App = props => {
             <Route path="/default-camera-input" component={DefaultCameraInput} />
             <Route path="/media-recorder-capture" component={MediaRecorder} />
             <Route path="/sandbox" component={Sandbox} />
+            <Route path="/vad-time-slicing" component={VadTimeSlicing} />
             <Route component={NotFound} />
           </Switch>
         </div>

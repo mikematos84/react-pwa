@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useMediaDevices } from 'react-use';
 
 // Context
@@ -8,9 +8,11 @@ const Sandbox = props => {
   const state = useMediaDevices();
 
   return (
-    <pre>
-      {JSON.stringify(state, null, 2)}
-    </pre>
+    <div className="wrapper content">
+      <pre>
+        {JSON.stringify(state, null, 2)}
+      </pre>
+    </div>
   )
 }
 
