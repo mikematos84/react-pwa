@@ -9,6 +9,7 @@ const VadTimeSlicing = props => {
 
   useEffect(() => {
     const player = document.querySelector('video');
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
     const audioContext = new AudioContext();
     const stream = player.captureStream();
     let _vad = {};
@@ -23,18 +24,18 @@ const VadTimeSlicing = props => {
       maxNoiseLevel: 0.7,         // from 0 to 1
       avgNoiseMultiplier: 1.2,
       onVoiceStart: function () {
+        setVoiceState('active');
         setTimeSlices(prev => [...prev, {
           seconds: player.currentTime,
           voiceState: 'active'
         }])
-        setVoiceState('active');
       },
       onVoiceStop: function () {
+        setVoiceState('inactive');
         setTimeSlices(prev => [...prev, {
           seconds: player.currentTime,
           voiceState: 'inactive'
         }])
-        setVoiceState('inactive');
       },
       onUpdate: function (val) {
         setVoiceActivity(val);
@@ -62,6 +63,19 @@ const VadTimeSlicing = props => {
 
   }, [])
 
+  const filteredSegments = () => {
+    /**
+     * start time
+     * end time
+     * current time
+     * duration
+     */
+    return timeSlices.filter(x => {
+      if (x.voiceState === 'active')
+        return x;
+    });
+  }
+
   return (
     <div className="wrapper content">
       <h3>VAD Time Slicing</h3>
@@ -74,17 +88,14 @@ const VadTimeSlicing = props => {
         </li>
       </ul>
 
-      <video
-        controls
-        width={480}
-      >
+      <video controls width={480}      >
         <source src="./assets/President_Obamas_best_speeches.mp4" />
       </video>
       <div>Voice State: <strong>{voiceState}</strong></div>
       <div>Current voice activity value: <strong>{voiceActivity}</strong></div>
       <pre>
         {
-          JSON.stringify(timeSlices, null, 2)
+          JSON.stringify(filteredSegments(timeSlices), null, 2)
         }
       </pre>
     </div>
