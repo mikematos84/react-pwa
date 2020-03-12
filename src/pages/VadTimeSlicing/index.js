@@ -95,7 +95,7 @@ const VadTimeSlicing = props => {
       <div>Current voice activity value: <strong>{voiceActivity}</strong></div>
       <pre>
         {
-          JSON.stringify(filteredSegments(timeSlices), null, 2)
+          JSON.stringify(timeSlices, null, 2)
         }
       </pre>
     </div>
