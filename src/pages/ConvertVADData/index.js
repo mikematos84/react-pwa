@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import withContextConsumer from "../../contexts/navigation/withContextConsumer"
 import axios from 'axios';
+import saveJsonToFile from '../../services/saveJsonToFile';
 
 // Cleanup time slice 
 Object.defineProperty(Array.prototype, 'cleanupTimeSlice', {
@@ -34,6 +35,7 @@ const ConvertVADData = props => {
       .filter(x => x.voiceState === 'active')
       .cleanupTimeSlice()
 
+    saveJsonToFile('vad-realtime-time-slices-converted.json', data)
     setTimeSlices(data);
   }
 
