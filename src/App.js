@@ -24,6 +24,7 @@ import MediaRecorder from './pages/MediaRecorder';
 import DefaultCameraInput from './pages/DefaultCameraInput';
 import Sandbox from './pages/Sandbox';
 import VadTimeSlicing from './pages/VadTimeSlicing';
+import ConvertVADData from './pages/ConvertVADData';
 
 const App = props => {
   const { navigation } = useContext(NavigationContext);
@@ -40,6 +41,7 @@ const App = props => {
             <Route path="/media-recorder-capture" component={MediaRecorder} />
             <Route path="/sandbox" component={Sandbox} />
             <Route path="/vad-time-slicing" component={VadTimeSlicing} />
+            <Route path="/convert-vad-data" component={ConvertVADData} />
             <Route component={NotFound} />
           </Switch>
         </div>
