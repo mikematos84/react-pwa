@@ -14,6 +14,24 @@ Object.defineProperty(Array.prototype, 'cleanupTimeSlice', {
   }
 });
 
+const DataHolder = async props => {
+  const self = this;
+  const data = {};
+  const name = props.name || 'DataHolder';
+  const url = props.url || null;
+
+  return new Promise(async (resolve, reject) => {
+    try {
+      let resp = await axios.get(url);
+      data = resp.data;
+      resolve(self);
+    }
+    catch (err) {
+      reject(err);
+    }
+  })
+}
+
 const ConvertVADData = props => {
   const [rawTimeSlices, setRawTimeSlices] = useState({});
   const [timeSlices, setTimeSlices] = useState({});
@@ -22,7 +40,12 @@ const ConvertVADData = props => {
   const [activityData, setActivityData] = useState({});
 
   useEffect(() => {
-    loadTimeSliceData();
+    new DataHolder({
+      name: 'Obama',
+      url: 'http://localhost:3001/President_Obamas_best_speeches_no_audio-non-stream.json'
+    }).
+
+      loadTimeSliceData();
     loadActivityData();
   }, [])
 
