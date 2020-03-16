@@ -24,7 +24,8 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/save', require('./save'))
-app.use('/vad/:file', require('./voice-activity-detection'))
+// app.use('/vad/:file', require('./voice-activity-detection'))
+app.use('/vad/:type/:file', require('./voice-activity-detection'))
 app.use('/', router);
 
 

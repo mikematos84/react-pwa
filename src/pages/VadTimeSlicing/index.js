@@ -105,6 +105,7 @@ const VadTimeSlicing = props => {
 
       <video controls width={480}      >
         <source src="./assets/President_Obamas_best_speeches.mp4" />
+        {/* <source src="./assets/President_Obamas_best_speeches_no_audio.mp4" /> */}
       </video>
 
       <div>Voice State: <strong>{voiceState}</strong></div>
