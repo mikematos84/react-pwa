@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import vad from 'voice-activity-detection';
-import axios from 'axios';
+import withContextConsumer from '../../contexts/navigation/withContextConsumer';
+import saveJsonToFile from '../../services/saveJsonToFile';
 
 const VadTimeSlicing = props => {
   const [voiceState, setVoiceState] = useState('inactive');
@@ -9,16 +10,6 @@ const VadTimeSlicing = props => {
   let _activityData = [];
   const [timeSlices, setTimeSlices] = useState([]);
   let _timeSlices = [];
-
-  const saveJsonToFile = (filename, data = {}) => {
-    axios.post('http://localhost:3001/save', {
-      filename,
-      data,
-    })
-      .then(response => {
-        console.log(response);
-      });
-  }
 
   useEffect(() => {
     const player = document.querySelector('video');
@@ -127,4 +118,4 @@ const VadTimeSlicing = props => {
   )
 }
 
-export default VadTimeSlicing;
+export default withContextConsumer(VadTimeSlicing);
