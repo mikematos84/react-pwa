@@ -103,10 +103,12 @@ const VadTimeSlicing = props => {
     <div className="wrapper content">
       <h3>VAD Time Slicing</h3>
 
-      <video controls width={480}      >
-        <source src="./assets/President_Obamas_best_speeches.mp4" />
-        {/* <source src="./assets/President_Obamas_best_speeches_no_audio.mp4" /> */}
-      </video>
+      <video
+        controls
+        width={480}
+        crossOrigin="anonymous"
+        src="http://localhost:3001/President_Obamas_best_speeches.mp4"
+      />
 
       <div>Voice State: <strong>{voiceState}</strong></div>
       <div>Current voice activity value: <strong>{voiceActivity}</strong></div>
