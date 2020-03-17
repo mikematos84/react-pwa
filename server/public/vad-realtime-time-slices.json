@@ -1,182 +1,166 @@
 [
   {
-    "seconds": 0.012302,
+    "seconds": 0.017945,
     "voiceState": "inactive"
   },
   {
-    "seconds": 0.329391,
+    "seconds": 0.335199,
     "voiceState": "active"
   },
   {
-    "seconds": 2.581218,
+    "seconds": 2.401693,
     "voiceState": "inactive"
   },
   {
-    "seconds": 5.437348,
+    "seconds": 5.443053,
     "voiceState": "active"
   },
   {
-    "seconds": 7.13249,
+    "seconds": 7.184686,
     "voiceState": "inactive"
   },
   {
-    "seconds": 7.202123,
+    "seconds": 7.208957,
     "voiceState": "active"
   },
   {
-    "seconds": 7.271675,
+    "seconds": 7.230963,
     "voiceState": "inactive"
   },
   {
-    "seconds": 9.199039,
+    "seconds": 9.211057,
     "voiceState": "active"
   },
   {
-    "seconds": 9.222204,
+    "seconds": 10.017364,
     "voiceState": "inactive"
   },
   {
-    "seconds": 9.248375,
+    "seconds": 11.178307,
     "voiceState": "active"
   },
   {
-    "seconds": 9.96506,
+    "seconds": 11.248008,
     "voiceState": "inactive"
   },
   {
-    "seconds": 11.19609,
+    "seconds": 11.510123,
     "voiceState": "active"
   },
   {
-    "seconds": 11.265533,
+    "seconds": 11.52677,
     "voiceState": "inactive"
   },
   {
-    "seconds": 11.613788,
+    "seconds": 11.898223,
     "voiceState": "active"
   },
   {
-    "seconds": 11.729947,
+    "seconds": 12.850343,
     "voiceState": "inactive"
   },
   {
-    "seconds": 11.753236,
+    "seconds": 18.213917,
     "voiceState": "active"
   },
   {
-    "seconds": 12.890997,
+    "seconds": 18.423095,
     "voiceState": "inactive"
   },
   {
-    "seconds": 18.231464,
+    "seconds": 19.607119,
     "voiceState": "active"
   },
   {
-    "seconds": 18.394019,
+    "seconds": 19.776075,
     "voiceState": "inactive"
   },
   {
-    "seconds": 21.048664,
+    "seconds": 21.093379,
     "voiceState": "active"
   },
   {
-    "seconds": 83.270688,
+    "seconds": 93.018984,
     "voiceState": "inactive"
   },
   {
-    "seconds": 83.331575,
+    "seconds": 97.244771,
     "voiceState": "active"
   },
   {
-    "seconds": 83.493022,
+    "seconds": 97.861711,
     "voiceState": "inactive"
   },
   {
-    "seconds": 83.563485,
+    "seconds": 102.282344,
     "voiceState": "active"
   },
   {
-    "seconds": 93.199845,
+    "seconds": 102.760281,
     "voiceState": "inactive"
   },
   {
-    "seconds": 97.221673,
+    "seconds": 102.830137,
     "voiceState": "active"
   },
   {
-    "seconds": 98.260373,
+    "seconds": 103.363563,
     "voiceState": "inactive"
   },
   {
-    "seconds": 98.289323,
+    "seconds": 103.386308,
     "voiceState": "active"
   },
   {
-    "seconds": 98.493947,
+    "seconds": 103.41434,
     "voiceState": "inactive"
   },
   {
-    "seconds": 102.254447,
+    "seconds": 103.433132,
     "voiceState": "active"
   },
   {
-    "seconds": 104.089607,
+    "seconds": 104.115024,
     "voiceState": "inactive"
   },
   {
-    "seconds": 113.98151,
+    "seconds": 114.022395,
     "voiceState": "active"
   },
   {
-    "seconds": 127.402053,
+    "seconds": 127.745663,
     "voiceState": "inactive"
   },
   {
-    "seconds": 130.050119,
+    "seconds": 130.066444,
     "voiceState": "active"
   },
   {
-    "seconds": 158.424858,
+    "seconds": 159.626782,
     "voiceState": "inactive"
   },
   {
-    "seconds": 158.495278,
+    "seconds": 161.159233,
     "voiceState": "active"
   },
   {
-    "seconds": 159.35626,
+    "seconds": 162.389927,
     "voiceState": "inactive"
   },
   {
-    "seconds": 161.118728,
+    "seconds": 163.364639,
     "voiceState": "active"
   },
   {
-    "seconds": 162.535182,
+    "seconds": 163.480441,
     "voiceState": "inactive"
   },
   {
-    "seconds": 162.557624,
+    "seconds": 163.898434,
     "voiceState": "active"
   },
   {
-    "seconds": 162.58106,
-    "voiceState": "inactive"
-  },
-  {
-    "seconds": 163.323131,
-    "voiceState": "active"
-  },
-  {
-    "seconds": 163.488975,
-    "voiceState": "inactive"
-  },
-  {
-    "seconds": 163.887871,
-    "voiceState": "active"
-  },
-  {
-    "seconds": 165.344943,
+    "seconds": 165.362,
     "voiceState": "inactive"
   }
 ]

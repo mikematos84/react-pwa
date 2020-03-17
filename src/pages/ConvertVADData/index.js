@@ -24,8 +24,8 @@ const ConvertVADData = props => {
   const [nodeVADData, setNodeVADData] = useState({});
 
   useEffect(() => {
-    loadNodeVadDataNonStream();
-    loadNodeVadDataStream();
+    // loadNodeVadDataNonStream();
+    // loadNodeVadDataStream();
     loadTimeSliceData();
     loadActivityData();
   }, [])
