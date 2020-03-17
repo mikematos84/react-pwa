@@ -86,19 +86,6 @@ const VadTimeSlicing = props => {
 
   }, []);
 
-  const filteredSegments = () => {
-    /**
-     * start time
-     * end time
-     * current time
-     * duration
-     */
-    return timeSlices.filter(x => {
-      if (x.voiceState === 'active')
-        return x;
-    });
-  }
-
   return (
     <div className="wrapper content">
       <h3>VAD Time Slicing</h3>
