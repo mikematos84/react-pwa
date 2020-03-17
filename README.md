@@ -15,6 +15,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm run app-env`
+Quick and easy method to start necessary app environment dependencies, backend, frontend, etc...
+
 ### `npm run start-sw`
 Uses [http-serve](https://www.npmjs.com/package/http-serve) to serve application and enable service worker functionality 
 
