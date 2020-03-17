@@ -40,6 +40,7 @@ const saveJsonToFile = (filename, data, encoding = 'utf8', callback = () => { })
 
 const processNonStream = (file) => {
   return new Promise((resolve, reject) => {
+    const filename = file.substring(file.lastIndexOf('/') + 1).split('.')[0];
     const chunks = [];
     const vad = new VAD(VAD.Mode.NORMAL);
     const stream = fs.createReadStream(file);
@@ -62,7 +63,7 @@ const processNonStream = (file) => {
         }
       }).catch(console.error);
     }).on("end", () => {
-      saveJsonToFile('public/non-stream.json', chunks);
+      saveJsonToFile('public/' + filename + '-non-stream.json', chunks);
       resolve(chunks);
     }).on("error", (err) => {
       reject(err);
@@ -72,6 +73,7 @@ const processNonStream = (file) => {
 
 const processStream = async (file) => {
   return new Promise((resolve, reject) => {
+    const filename = file.substring(file.lastIndexOf('/') + 1).split('.')[0];
     const chunks = [];
     const inputStream = fs.createReadStream(file);
     const vadStream = VAD.createStream({
@@ -83,7 +85,8 @@ const processStream = async (file) => {
     inputStream.pipe(vadStream).on("data", chunk => {
       chunks.push(chunk);
     }).on("end", () => {
-      saveJsonToFile('public/stream.json', chunks);
+      console.log(filename);
+      saveJsonToFile('public/' + filename + '-stream.json', chunks);
       resolve(chunks);
     }).on("error", (err) => {
       reject(err);
@@ -92,19 +95,29 @@ const processStream = async (file) => {
 }
 
 module.exports = async (req, res) => {
+  const { type, file } = req.params;
+  if (!file) {
+    res.json({ message: "Missing file" });
+  }
 
-  const videoFile = path.join(__dirname, 'public/President_Obamas_best_speeches.mp4');
+  const videoFile = path.join(__dirname, 'public/' + file);
   const audioFile = videoFile.substring(0, videoFile.lastIndexOf('.')) + '.mp3';
-
 
   if (!fileExists(audioFile))
     await extractAudio(videoFile, audioFile);
 
+  let result = null;
+
   // Non-Stream Example
-  let result = await processNonStream(audioFile);
+  if (type && type.toLowerCase() === 'non-stream')
+    result = await processNonStream(audioFile);
 
   // Stream Example
-  // let result = await processStream(audioFile);
+  if (type && type.toLowerCase() === 'stream')
+    result = await processStream(audioFile);
 
-  res.json(result);
+  if (result !== null)
+    res.json(result);
+  else
+    res.json({ message: "Error processing audio" })
 };

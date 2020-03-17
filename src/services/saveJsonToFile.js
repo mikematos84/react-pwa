@@ -6,7 +6,7 @@ const saveJsonToFile = (filename, data = {}) => {
     data,
   })
     .then(response => {
-      console.log(response);
+      // console.log(response);
     });
 }
 

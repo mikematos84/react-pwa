@@ -1,5 +1,5 @@
 const currentPage = (location = {}) => {
-  console.log(location);
+  // console.log(location);
   const { pathname } = location;
   if (!pathname) return;
   return pathname.substring(pathname.lastIndexOf('/') + 1).split('?')[0];
