@@ -90,20 +90,26 @@ const VadTimeSlicing = props => {
     <div className="wrapper content">
       <h3>VAD Time Slicing</h3>
 
-      <video
-        controls
-        width={480}
-        crossOrigin="anonymous"
-        src="http://localhost:3001/President_Obamas_best_speeches.mp4"
-      />
+      <div className="columns">
+        <div>
+          <video
+            controls
+            width={'100%'}
+            crossOrigin="anonymous"
+            src="http://localhost:3001/President_Obamas_best_speeches.mp4"
+          />
+        </div>
+        <div>
+          <div>Voice State: <strong>{voiceState}</strong></div>
+          <div>Current voice activity value: <strong>{voiceActivity}</strong></div>
+          <pre>
+            {
+              JSON.stringify(timeSlices, null, 2)
+            }
+          </pre>
+        </div>
+      </div>
 
-      <div>Voice State: <strong>{voiceState}</strong></div>
-      <div>Current voice activity value: <strong>{voiceActivity}</strong></div>
-      <pre>
-        {
-          JSON.stringify(timeSlices, null, 2)
-        }
-      </pre>
     </div>
   )
 }

@@ -1,0 +1,34 @@
+.App {
+  &.vad-time-slicing{
+    .columns{
+      display: flex;
+      justify-content: flex-start;
+
+      > div{ 
+        max-width: 50%;
+        &:nth-child(2){
+          padding-left: 20px;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 480px){
+      .columns{
+        display: flex;
+        flex-direction: column;
+        
+        > div{
+          max-width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+          &:nth-child(2){
+            align-items: stretch;
+            padding-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}
