@@ -73,15 +73,13 @@ const VadTimeSlicing = props => {
 
     player.onended = () => {
       console.log('video ended');
-      _vad.disconnect();
+      _vad.destroy();
 
       console.log(_timeSlices);
       saveJsonToFile('vad-realtime-time-slices.json', _timeSlices);
 
-      setTimeout(() => {
-        console.log(_activityData);
-        saveJsonToFile('vad-realtime-activity-data.json', _activityData);
-      }, 1000)
+      console.log(_activityData);
+      saveJsonToFile('vad-realtime-activity-data.json', _activityData);
     }
 
   }, []);
