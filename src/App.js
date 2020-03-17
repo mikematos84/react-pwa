@@ -34,7 +34,7 @@ const App = props => {
       <Suspense fallback={<div>Loading...</div>}>
         <div className={`App ${currentPage(navigation.location)}`}>
           <Navigation />
-          {debug()}
+          {/* {debug()} */}
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/default-camera-input" component={DefaultCameraInput} />
