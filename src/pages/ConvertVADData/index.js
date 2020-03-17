@@ -21,10 +21,30 @@ const ConvertVADData = props => {
   const [rawActivityData, setRawActivityData] = useState({});
   const [activityData, setActivityData] = useState({});
 
+  const [nodeVADData, setNodeVADData] = useState({});
+
   useEffect(() => {
+    loadNodeVadDataNonStream();
+    loadNodeVadDataStream();
     loadTimeSliceData();
     loadActivityData();
   }, [])
+
+  const loadNodeVadDataNonStream = async () => {
+    let resp = await axios.get('http://localhost:3001/President_Obamas_best_speeches_no_audio-non-stream.json');
+    console.log(resp.data.map(x => {
+      delete x.audioData;
+      return x;
+    }));
+  }
+
+  const loadNodeVadDataStream = async () => {
+    let resp = await axios.get('http://localhost:3001/President_Obamas_best_speeches_no_audio-stream.json');
+    console.log(resp.data.map(x => {
+      delete x.audioData;
+      return x;
+    }));
+  }
 
   // load time slice data
   const loadTimeSliceData = async () => {
@@ -42,7 +62,7 @@ const ConvertVADData = props => {
   // load activity data 
   const loadActivityData = async () => {
     let resp = await axios.get('http://localhost:3001/vad-realtime-activity-data.json');
-    console.log(resp.data);
+    // console.log(resp.data);
   }
 
   const calculateTimeSliceDuration = slices => {
