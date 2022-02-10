@@ -57,7 +57,7 @@
     "gh-pages": "^2.2.0",
     "http-serve": "^1.0.1",
     "https-serve": "^1.0.0",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "resolutions": {
     "node-sass": "npm:sass"
